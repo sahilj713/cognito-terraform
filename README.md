@@ -217,6 +217,7 @@ Each `client` object in the map accepts the following attributes:
 
 #### Example of terraform.tfvars
 
+```hcl
 user_pools = {
   userpool1 = {
     user_pool_name                   = "test-pool"
@@ -303,4 +304,4 @@ user_pools = {
   }
 }
 
-
+```
