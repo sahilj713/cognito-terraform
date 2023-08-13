@@ -164,7 +164,7 @@ You can use this module to create a Cognito User Pool using the default values o
   ```hcl
   clients = {
     name = {
-        allowed_oauth_scopes                 = ["presto-brightree-service-prod/order.write", "presto-brightree-service-prod/status.write"]
+        allowed_oauth_scopes                 = ["resource-server-1/order.write", "resource-server-1/status.write"]
         generate_secret                      = true
         refresh_token_validity               = 30
         prevent_user_existence_errors        = "ENABLED"
@@ -209,7 +209,7 @@ Each `client` object in the map accepts the following attributes:
 
     Choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to ENABLED and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to LEGACY, those APIs will return a UserNotFoundException exception if the user does not exist in the user pool.
 
-    - [**`refresh_token_validity`**](#attr-clients-refresh_token_validity): *(Optional `number`)*<a name="attr-clients-refresh_token_validity"></a>
+- [**`refresh_token_validity`**](#attr-clients-refresh_token_validity): *(Optional `number`)*<a name="attr-clients-refresh_token_validity"></a>
 
     Time limit in days refresh tokens are valid for. 
 
@@ -273,7 +273,7 @@ user_pools = {
 
   app_clients = {
       client1 = {
-        allowed_oauth_scopes                 = ["presto-brightree-service-prod/order.write", "presto-brightree-service-prod/status.write"]
+        allowed_oauth_scopes                 = ["resource-server-1/order.write", "resource-server-1/status.write"]
         generate_secret                      = true
         refresh_token_validity               = 30
         prevent_user_existence_errors        = "ENABLED"
@@ -286,7 +286,7 @@ user_pools = {
         ]
       }
       client2 = {
-        allowed_oauth_scopes                 = ["presto-brightree-service-dev/status.write", "presto-brightree-service-dev/order.read"]
+        allowed_oauth_scopes                 = ["resource-server-2/status.write", "resource-server-2/order.read"]
         generate_secret                      = true
         refresh_token_validity               = 90
         prevent_user_existence_errors        = "ENABLED"
