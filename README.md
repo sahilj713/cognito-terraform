@@ -272,7 +272,7 @@ user_pools = {
     ]
 
   app_clients = {
-      client1 = {
+      client1_name = {
         allowed_oauth_scopes                 = ["resource-server-1/order.write", "resource-server-1/status.write"]
         generate_secret                      = true
         refresh_token_validity               = 30
@@ -285,7 +285,7 @@ user_pools = {
           "ALLOW_CUSTOM_AUTH"
         ]
       }
-      client2 = {
+      client2_name = {
         allowed_oauth_scopes                 = ["resource-server-2/status.write", "resource-server-2/order.read"]
         generate_secret                      = true
         refresh_token_validity               = 90
